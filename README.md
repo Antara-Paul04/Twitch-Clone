@@ -1,6 +1,6 @@
 # Twitch Clone
 
-![Twitch Clone Logo](https://www.onlinepalette.com/wp-content/uploads/2021/07/Twitch-Glitch-Purple-878x1024.png)
+![Twitch Clone Logo](https://www.onlinepalette.com/wp-content/uploads/2021/07/Twitch-Glitch-Purple-878x1024.png =150x)
 
 ## Overview
 
