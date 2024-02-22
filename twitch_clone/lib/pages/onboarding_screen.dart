@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'login_screen.dart'; 
+import 'signup_screen.dart';
 class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,21 +11,16 @@ class OnboardingScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.network(
-              // 'https://www.onlinepalette.com/wp-content/uploads/2021/07/Twitch-Glitch-Purple-878x1024.png',
               'https://www.onlinepalette.com/wp-content/uploads/2021/07/Twitch-Extruded-Wordmark-Purple-1024x342.png',
               width: 300,
               height: 100,
             ),
-
             SizedBox(height: 40),
-
             const Text(
               'You’re already one of us.',
               style: TextStyle(color:Colors.white, fontWeight: FontWeight.bold, fontFamily: 'Roboto', fontSize: 25),
             ),
-
             SizedBox(height: 30),
-
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.fromLTRB(150, 0, 150, 0),
@@ -32,7 +28,11 @@ class OnboardingScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
               ),
               onPressed: () {
-                print("Login Button pressed");
+                // Navigate to the login screen when the button is pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Login()),
+                );
               },
               child: Text('LOGIN',
               style:TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 15)),
@@ -45,15 +45,19 @@ class OnboardingScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
               ),
               onPressed: () {
-                print("Sign up Button pressed");
+                 // Navigate to the signup screen when the button is pressed
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Signup()),
+                );
               },
               child: Text('SIGN UP',
               style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 15)
               ),
             ),
-            ],
-            ),
-            ),
-        );
+          ],
+        ),
+      ),
+    );
   }
 }

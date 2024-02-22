@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatelessWidget {
+class Signup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +24,7 @@ class Login extends StatelessWidget {
                   ),
                   SizedBox(width: 10),
                   const Text(
-                    'Log in to Twitch',
+                    'Sign Up to Twitch',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -38,7 +38,7 @@ class Login extends StatelessWidget {
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  'Username or Email Address',
+                  'Email Address',
                   style: TextStyle(color: Colors.white, fontFamily: 'Roboto', fontSize: 15),
                   textAlign: TextAlign.left,
                 ),
@@ -52,7 +52,31 @@ class Login extends StatelessWidget {
                       borderSide: const BorderSide(color: Color.fromARGB(255, 95, 95, 95), width: 1)),
                   focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(color: Color(0xFF9146FF), width: 1)),
-                  hintText: 'Username/Email Address',
+                  hintText: 'Email Address',
+                  hintStyle: TextStyle(
+                    color: const Color.fromARGB(255, 123, 123, 123),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'Username',
+                  style: TextStyle(color: Colors.white, fontFamily: 'Roboto', fontSize: 15),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              SizedBox(height: 10),
+              TextField(
+                style: TextStyle(color: Colors.white),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                  enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color.fromARGB(255, 95, 95, 95), width: 1)),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(color: Color(0xFF9146FF), width: 1)),
+                  hintText: 'Username',
                   hintStyle: TextStyle(
                     color: const Color.fromARGB(255, 123, 123, 123),
                   ),
@@ -87,13 +111,13 @@ class Login extends StatelessWidget {
 
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(horizontal: 148),
+                    padding: EdgeInsets.symmetric(horizontal: 143),
                     primary: Color(0xFF9146FF),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
                 onPressed: () {
                   print("Login Button pressed");
                 },
-                child: Text('LOGIN',
+                child: Text('SIGNUP',
                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 15)),
               ),
               SizedBox(height: 10),
@@ -101,7 +125,7 @@ class Login extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'New to Twitch?',
+                    'Already have an account?',
                     style: TextStyle(
                       color: Color.fromARGB(255, 95, 95, 95),
                     ),
@@ -116,7 +140,7 @@ class Login extends StatelessWidget {
                       elevation: 0,
                     ),
                     child: Text(
-                      'Sign up',
+                      'Log In',
                       style: TextStyle(
                         color: Color(0xFF9146FF),
                       ),
