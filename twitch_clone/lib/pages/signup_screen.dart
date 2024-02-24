@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_screen.dart'; 
 
 class Signup extends StatelessWidget {
   @override
@@ -7,6 +8,7 @@ class Signup extends StatelessWidget {
       backgroundColor: Color(0xFF18181B),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: Color(0xFF9146FF)),
       ),
       body:
        Padding(
@@ -112,7 +114,7 @@ class Signup extends StatelessWidget {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 143),
-                    primary: Color(0xFF9146FF),
+                    backgroundColor: Color(0xFF9146FF),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
                 onPressed: () {
                   print("Login Button pressed");
@@ -132,11 +134,15 @@ class Signup extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      print("Pressed");
+                       // Navigate to the login screen when the button is pressed
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Login()),
+                        );
                     },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero,
-                      primary: Colors.transparent,
+                      backgroundColor: Colors.transparent,
                       elevation: 0,
                     ),
                     child: Text(

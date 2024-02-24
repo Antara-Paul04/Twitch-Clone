@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'signup_screen.dart';
 
 class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF18181B),
+
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        iconTheme: IconThemeData(color: Color(0xFF9146FF)),
       ),
       body:
        Padding(
@@ -88,7 +91,7 @@ class Login extends StatelessWidget {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 148),
-                    primary: Color(0xFF9146FF),
+                    backgroundColor: Color(0xFF9146FF),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
                 onPressed: () {
                   print("Login Button pressed");
@@ -96,7 +99,32 @@ class Login extends StatelessWidget {
                 child: Text('LOGIN',
                     style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 15)),
               ),
+
               SizedBox(height: 10),
+
+              const Text('OR',
+              style: TextStyle(color: Colors.white)),
+
+              SizedBox(height: 10),
+
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(horizontal: 85),
+                    backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))),
+                onPressed: () {
+                  print("google Button pressed");
+                },
+                child: Row(
+                  children: [
+                    Image.network(
+                    'https://www.pngall.com/wp-content/uploads/5/Google-G-Logo-PNG-Image.png',
+                    width: 20,
+                    height: 20,),
+
+                    Text(' Continue with Google',
+                    style: TextStyle(color: const Color.fromARGB(255, 0, 0, 0), fontWeight: FontWeight.w500, fontSize: 15)),])
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -108,11 +136,15 @@ class Login extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      print("Pressed");
+                      // Navigate to the signup screen when the button is pressed
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Signup()),
+                );
                     },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.zero,
-                      primary: Colors.transparent,
+                      backgroundColor: Colors.transparent,
                       elevation: 0,
                     ),
                     child: Text(
